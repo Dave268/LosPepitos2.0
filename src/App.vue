@@ -1,40 +1,19 @@
 <template>
   <div id="app">
-    <app-header></app-header>
+    <app-navigation></app-navigation>
     <router-view />
   </div>
 </template>
 
 <script>
-import appHeader from "./components/Header";
+import appNavigation from "./components/Navigation";
+
 export default {
   components: {
-    appHeader,
-  },
+    appNavigation
+  }
 };
 </script>
 
-<style lang="scss">
-@import "normalize-scss";
-@include normalize();
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #34495e;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+<style lang="postcss">
 </style>

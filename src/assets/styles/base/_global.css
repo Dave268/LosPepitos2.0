@@ -1,0 +1,20 @@
+/* html {
+} */
+
+body {
+  font-family: "Palatino Linotype", serif;
+  color: var(--darkColor);
+  background-color: var(--lightColor);
+}
+
+img {
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--mainRed);
+}

@@ -39,10 +39,9 @@
 export default {};
 </script>
 
-<style lang="scss">
-$lightColor: #fbffe1;
+<style lang="postcss">
 .header {
-  background-color: $lightColor;
+  background-color: var(--lightColor);
   display: flex;
 
   &__logo {
@@ -52,5 +51,6 @@ $lightColor: #fbffe1;
 }
 
 .header__menu-content {
+  display: none;
 }
 </style>
