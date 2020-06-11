@@ -7,4 +7,11 @@ module.exports = {
       return args;
     });
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `@import "./src/assets/styles/base.scss";`,
+      },
+    },
+  },
 };
