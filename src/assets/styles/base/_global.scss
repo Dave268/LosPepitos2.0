@@ -5,6 +5,8 @@ body {
   font-family: "Palatino Linotype", arial;
   color: $darkColor;
   background-color: $lightColor;
+  min-width: 330px;
+  font-family: "Palatino Linotype";
 }
 
 img {
@@ -17,4 +19,34 @@ img {
 
 a {
   color: $mainRed;
+}
+
+h1 {
+}
+
+h2 {
+  color: $lightColor;
+  font-family: "papyrus";
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  font-size: 14px;
+  line-height: 1.2rem;
+}
+h3 {
+  color: $mainRed;
+  font-size: 15px;
+}
+h4 {
+}
+h5 {
+}
+h6 {
+  font-size: 8px;
+  font-style: italic;
+  font-weight: 300;
+}
+p {
+  color: $darkColor;
+  font-size: 10px;
+  text-align: justify;
 }

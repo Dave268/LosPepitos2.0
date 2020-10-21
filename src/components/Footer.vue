@@ -21,9 +21,18 @@ export default {};
 
 <style lang="scss">
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+  width: 100%;
+  bottom: 0;
+  margin-top: 30px;
   background-color: $darkColor;
 }
 .footer__social {
+  margin: 0 20px 0 20px;
+
   img {
     color: $lightColor;
   }

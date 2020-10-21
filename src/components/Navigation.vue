@@ -2,12 +2,13 @@
   <nav class="header">
     <div class="header__logo">
       <img
-        src="../assets/images/logo/Logo_LosPepitos_Completmdpi.png"
+        src="../assets/images/logo/Logo_Pepitos_plongee_long.svg"
         alt="Logo de lospepitos.org"
-        srcset="../assets/images/logo/Logo_LosPepitos_Complet.svg"
+        srcset="../assets/images/logo/Logo_Pepitos_plongee_long.svg"
       />
     </div>
-    <div class="header__menu-icon">
+    <div class="header__logo__circle"></div>
+    <div class="header__menu-icon" v-on:click="displayMenu">
       <div class="header__menu-icon__middle"></div>
     </div>
     <div class="header__menu-content">
@@ -39,34 +40,115 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    displayMenu : function(){
+      var x = document.getElementsByClassName("header__menu-content")[0];
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  }
+};
 </script>
 
 <style lang="scss">
 .header {
   background-color: $lightColor;
-  position: absolute;
   z-index: 1;
   width: 100%;
-  height: 110px;
+  height: 90px;
   padding: 10px 0;
+
+  @include for-big-phone-only{
+    height: 110px;
+  }
+
+  @include for-tablet-portrait-up {
+      height: 120px;
+    }
+
+    @include for-tablet-landscape-up {
+      height: 135px;
+    }
+
+    @include for-desktop-up {
+      height: 160px;
+    }
+
 
   &__logo {
     width: 35%;
-    min-width: 200px;
+    width: 200px;
     margin: auto 10px;
-    position: relative;
-    top: 15px;
+    position: absolute;
+    top: 0px;
     left: 10px;
+    z-index: 10;
+
+    @include for-big-phone-only{
+      width: 250px;
+    }
+
+    @include for-tablet-portrait-up {
+      width: 300px;
+    }
+
+    @include for-tablet-landscape-up {
+      width: 350px;
+    }
+
+    @include for-desktop-up {
+      width: 400px;
+    }
+
+  }
+
+  &__logo__circle {
+    display: block;
+    position: absolute;
+    background-color: $lightColor;
+    border-radius: 50%;
+    width: 103px;
+    height: 103px;
+    left: 20px;
+    top: 5px;
+    z-index: 1;
+
+    @include for-big-phone-only{
+      width: 130px;
+      height: 130px;
+    }
+
+     @include for-tablet-portrait-up {
+      width: 159px;
+      height: 159px;
+    }
+
+    @include for-tablet-landscape-up {
+      width: 182px;
+      height: 182px;
+    }
+
+    @include for-desktop-up {
+      width: 208px;
+      height: 208px;
+    }
   }
 
   &__menu-icon {
     width: 20px;
     height: 19px;
     position: absolute;
-    top: 70px;
+    top: 48px;
     right: 20px;
     z-index: 2;
+
+    @include for-big-phone-only{
+      top: 65px;
+    }
 
     &::before {
       content: "";
@@ -111,9 +193,38 @@ export default {};
       display: none;
     }
   }
+
+&__menu-content {
+  background: $lightColor;
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 90px;
+  z-index: 9;
+  
+
+    @include for-big-phone-only{
+    top: 110px;
+  }
+
+  @include for-tablet-portrait-up {
+      top: 120px;
+    }
+  }
+  &__menu-list{
+    margin-left: 15%; 
+    font-size: 15px;
+    &-item{
+      list-style-type: none;
+      padding: 15px 0;
+
+      img{
+        margin-right: 15px
+      }
+    }
+  }
 }
 
-.header__menu-content {
-  display: none;
-}
+
+
 </style>
