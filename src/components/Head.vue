@@ -45,7 +45,9 @@ export default {};
 <style lang="scss">
 .sunset {
   position: relative;
-  // top: 110px;
+  img {
+    width: 100%;
+  }
 }
 .sunset__caption {
   color: $lightColor;

@@ -1,7 +1,10 @@
 <template>
   <div class="home">
-    <h3>Derniers articles:</h3>
-    <div class="scrolling-wrapper">
+    <div class="lastArticles">
+      <h3>Derniers articles:</h3>
+      </div>
+    
+    <div class="scrolling-wrapper"  v-touch:swipe="swipeHandler">
       <article-list></article-list>
       <article-list></article-list>
       <article-list></article-list>
@@ -16,20 +19,24 @@ export default {
   name: "Home",
   components: {
     articleList,
-  },
+  }
 };
 </script>
 
 <style lang="scss">
 .home {
   top: 110px;
-  padding: 25px 25px;
+  padding: 10px 0 0 0 ;
+  max-width: 100vw;
 }
 
 .scrolling-wrapper{
   display: flex;
   align-items: center;
-  overflow-x: hidden;
+  overflow-x: scroll;
   scrollbar-width: none;
+}
+.lastArticles {
+  padding-left: 25px;
 }
 </style>

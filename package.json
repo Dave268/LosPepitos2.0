@@ -8,21 +8,25 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
+    "core-js": "^3.8.3",
     "vue": "^2.6.11",
-    "vue-router": "^3.3.4",
-    "vue-template-compiler": "^2.6.12"
+    "vue-router": "^3.4.9",
+    "vue-template-compiler": "^2.6.12",
+    "vue2-touch-events": "^2.3.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.4.6",
-    "@vue/cli-plugin-eslint": "^4.4.6",
-    "@vue/cli-plugin-router": "^4.4.6",
-    "@vue/cli-service": "^4.4.6",
+    "@vue/cli-plugin-babel": "^4.5.10",
+    "@vue/cli-plugin-eslint": "^4.5.10",
+    "@vue/cli-plugin-router": "^4.5.10",
+    "@vue/cli-service": "^4.5.10",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
     "normalize.scss": "^0.1.0",
-    "sass": "^1.26.9",
+    "sass": "^1.32.4",
     "sass-loader": "^8.0.2"
   },
   "eslintConfig": {

@@ -49,10 +49,10 @@
   }
 }
 
-.article:first-of-type {
-  margin-left: 0px;
-}
-.article:last-of-type {
-  margin-right: 0px;
-}
+// .article:first-of-type {
+//   margin-left: 0px;
+// }
+// .article:last-of-type {
+//   margin-right: 0px;
+// }
 </style>

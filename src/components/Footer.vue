@@ -21,13 +21,14 @@ export default {};
 
 <style lang="scss">
 .footer {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 55px;
-  width: 100%;
+  width: 100vw;
   bottom: 0;
-  margin-top: 30px;
+  margin-bottom: 0;
   background-color: $darkColor;
 }
 .footer__social {
