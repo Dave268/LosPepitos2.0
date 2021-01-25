@@ -28,6 +28,7 @@ export default {
   top: 110px;
   padding: 10px 0 0 0 ;
   max-width: 100vw;
+  margin-bottom: 70px;
 }
 
 .scrolling-wrapper{

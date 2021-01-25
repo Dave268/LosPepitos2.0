@@ -13,12 +13,11 @@
     </div>
     <div class="header__menu-content">
       <ul class="header__menu-list">
-        <!-- <li v-for="(item,index) in menuData" :key="index" class="header__menu-list-item">
-          <font-awesome-icon v-bind:icon="item.icon" /> {{ item.name }} 
-          <font-awesome-icon icon="chevron-right" /> 
-        </li> -->
-        <app-menu-item v-for="(item,index) in menuData" :key="index" :model="item"></app-menu-item>
-        
+        <app-menu-item
+          v-for="(item, index) in menuData"
+          :key="index"
+          :model="item"
+        ></app-menu-item>
       </ul>
     </div>
   </nav>
@@ -28,87 +27,89 @@
 // import appMenuItem from "./MenuItem";
 
 export default {
-  data(){
+  data() {
     return {
-      menuData: 
-        [
-          {
-            name: 'Home',
-            icon: 'home'
+      menuData: [
+        {
+          name: "Home",
+          icon: "home",
+        },
+        {
+          name: "Nous",
+          icon: "smile-beam",
+        },
+        {
+          name: "Projet Ecolo",
+          icon: "leaf",
+        },
+        {
+          name: "Journal de Voyage",
+          icon: "paper-plane",
+          children: [
+            {
+              name: "Asie",
+              children: [
+                {
+                  name: "Thailande",
+                },
+                {
+                  name: "Birmanie",
+                },
+                {
+                  name: "Thailande 2",
+                },
+                {
+                  name: "Cambodge",
+                },
+                {
+                  name: "Vietnam",
+                },
+                {
+                  name: "Malaisie",
+                },
+              ],
             },
-          {
-            name: 'Nous',
-            icon: 'smile-beam'
+            {
+              name: "Amérique",
+              children: [
+                {
+                  name: "PCT",
+                },
+                {
+                  name: "CDT",
+                },
+              ],
             },
-          {
-            name: 'Notre Projet Ecolo',
-            icon: 'leaf'
-            },
-          {
-            name: 'Notre Journal de Voyage',
-            icon: 'paper-plane',
-            children: [
-              {
-                name: 'Asie',
-                children: [
-                  {
-                    name: 'Thailande'
-                  },
-                  {
-                    name: 'Birmanie'
-                  },
-                  {
-                    name: 'Thailande 2'
-                  },
-                  {
-                    name: 'Cambodge'
-                  },
-                  {
-                    name: 'Vietnam'
-                  },
-                  {
-                    name: 'Malaisie'
-                  }
-                ]
-              },
-              {
-                name: 'Amérique',
-                children: [
-                  {
-                    name: 'PCT'
-                  },
-                  {
-                    name: 'CDT'
-                  }
-                  ]
-              }
-            ]
-            },
-          {
-            name: 'Nos Petites Perles',
-            icon: 'theater-masks'
-            },
-          {
-            name: 'Photos',
-            icon: 'images'
-            },
-          {
-            name: 'Contact',
-            icon: 'envelope'
-            }
-        ]
-      
-    }
+          ],
+        },
+        {
+          name: "Nos Petites Perles",
+          icon: "theater-masks",
+        },
+        {
+          name: "Photos",
+          icon: "images",
+        },
+        {
+          name: "Contact",
+          icon: "envelope",
+        },
+      ],
+    };
   },
   methods: {
-    displayMenu : function(){
-      document.querySelector('.header__menu-content').classList.toggle('header__menu-content--is-visible');
-      document.querySelector(".header__menu-icon").classList.toggle('header__menu-icon--close-x');
+    displayMenu: function () {
+      document
+        .querySelector(".header__menu-content")
+        .classList.toggle("header__menu-content--is-visible");
+      document
+        .querySelector(".header__menu-icon")
+        .classList.toggle("header__menu-icon--close-x");
     },
   },
- components: {
-      appMenuItem: () => import('./MenuItem.vue')
-  }
+  components: {
+    appMenuItem: () => import("./MenuItem.vue"),
+  },
 };
 </script>
 
@@ -120,22 +121,21 @@ export default {
   height: 90px;
   padding: 10px 0;
 
-  @include for-big-phone-only{
+  @include for-big-phone-only {
     height: 110px;
   }
 
   @include for-tablet-portrait-up {
-      height: 120px;
-    }
+    height: 120px;
+  }
 
-    @include for-tablet-landscape-up {
-      height: 135px;
-    }
+  @include for-tablet-landscape-up {
+    height: 135px;
+  }
 
-    @include for-desktop-up {
-      height: 160px;
-    }
-
+  @include for-desktop-up {
+    height: 160px;
+  }
 
   &__logo {
     width: 35%;
@@ -146,7 +146,7 @@ export default {
     left: 10px;
     z-index: 10;
 
-    @include for-big-phone-only{
+    @include for-big-phone-only {
       width: 250px;
     }
 
@@ -161,7 +161,6 @@ export default {
     @include for-desktop-up {
       width: 400px;
     }
-
   }
 
   &__logo__circle {
@@ -175,12 +174,12 @@ export default {
     top: 5px;
     z-index: 9;
 
-    @include for-big-phone-only{
+    @include for-big-phone-only {
       width: 130px;
       height: 130px;
     }
 
-     @include for-tablet-portrait-up {
+    @include for-tablet-portrait-up {
       width: 159px;
       height: 159px;
     }
@@ -204,11 +203,11 @@ export default {
     right: 20px;
     z-index: 2;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
 
-    @include for-big-phone-only{
+    @include for-big-phone-only {
       top: 65px;
     }
 
@@ -251,90 +250,79 @@ export default {
       transition: transform 0.5s ease-out;
     }
 
-    
-
     @include for-tablet-portrait-up {
       display: none;
     }
   }
   &__menu-icon--close-x {
-        &::before {
-            transform: rotate(45deg) scaleX(1.25);
-        }
-
-        .header__menu-icon__middle {
-            opacity: 0;
-            transform: scaleX(0);
-        }
-
-        &::after {
-            transform: rotate(-45deg) scaleX(1.25) translateY(1px);
-        }
+    &::before {
+      transform: rotate(45deg) scaleX(1.25);
     }
-&__menu-content {
-  user-select: none;
-  background: $lightColor;
-  opacity: 0.95;
-  height: 0%;
-  display: block;
-  position: absolute;
-  width: 100%;
-  top: 90px;
-  overflow-y: hidden;
-  z-index: 8;
-  transition: height .5s ease-in-out;
-  
 
-    @include for-big-phone-only{
-    top: 110px;
-  }
+    .header__menu-icon__middle {
+      opacity: 0;
+      transform: scaleX(0);
+    }
 
-  @include for-tablet-portrait-up {
-      top: 120px;
+    &::after {
+      transform: rotate(-45deg) scaleX(1.25) translateY(1px);
     }
   }
+  &__menu-content {
+    user-select: none;
+    background: $lightColor;
+    opacity: 0.95;
+    height: 0%;
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    overflow-y: hidden;
+    z-index: 8;
+    transition: height 0.5s ease-in-out;
 
-  &__menu-list{
-    font-size: 15px;
+    @include for-big-phone-only {
+      top: 110px;
+    }
+
+    @include for-tablet-portrait-up {
+      top: 70px;
+      left: 500px;
+      height: 50px;
+      width: 60%;
+      // display: inline;
+      // position: relative;
+    }
+  }
+
+  &__menu-list {
+    font-size: 0.75rem;
     width: 100%;
     padding: 0;
-    opacity: .8;
-    a { text-decoration: none;}
+    opacity: 0.8;
+    a {
+      text-decoration: none;
+    }
 
-    &-item{
+    &-item {
       list-style-type: none;
       padding: 15px 20%;
       width: 100%;
       color: $darkColor;
-      transition: all 1s;
-        
 
-      svg{
-        margin-right: 15px
+      @include for-tablet-portrait-up {
+        padding: 15px;
+        display: inline;
       }
 
-      &:active {
-          background: $darkColor;
-          color: $lightColor;
-          
-          
-        }
-        &--is-visible{
-      display: block;
-    }
+      svg {
+        margin-right: 15px;
+      }
     }
   }
 
   &__menu-content--is-visible {
     height: 100%;
-  }
-
-  &__menu-sub-menu{
-    display: none;
-
-    &--is-visible{
-      display: block;
-    }
   }
 }
 </style>
